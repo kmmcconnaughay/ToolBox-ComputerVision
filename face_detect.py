@@ -7,9 +7,12 @@ cap = cv2.VideoCapture(0) #object that uses index to tell it how many cameras ar
 
 while True:
     # Capture frame by frame
+    # if not cap.isOpened():
+        # cap.open('/dev/video0')
+        # print(cap.isOpened())
     read_correctly, frame = cap.read(0)
     assert read_correctly, "cap.read() failed"
-    print(cap.isOpened())
+
 
     # Display the resulting frame
     cv2.imshow('frame', frame)
